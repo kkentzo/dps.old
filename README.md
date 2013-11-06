@@ -35,33 +35,33 @@ as follows:
 Use `dps -h` for a list of options that can be specified in the
 command line. The most important options include :
 
-    * `mutate` : use any combination of b, k, a corresponding to
-      activating mutations on β, κ and α respectively. E.g. `--mutate
-      bk --alpha 1` sets α=1 and activates mutations on β and
-      κ. Defaults: no mutations and no copy number control
-      (i.e. beta=0.05, kappa=0, alpha=0).
+* `mutate` : use any combination of b, k, a corresponding to
+activating mutations on β, κ and α respectively. E.g. `--mutate bk
+--alpha 1` sets α=1 and activates mutations on β and κ. Defaults: no
+mutations and no copy number control (i.e. beta=0.05, kappa=0,
+alpha=0).
 
-    * `mu` : specifies the probability of mutation per plasmid
-      replication event (default: 5e-3).
+* `mu` : specifies the probability of mutation per plasmid replication
+      event (default: 5e-3).
 
-    * `mut_rng` : specifies the width / 2 of the uniform distribution
-      around a plasmid's current parameter values used for mutations
-      (default: 0.05).
+* `mut_rng` : specifies the width / 2 of the uniform distribution
+        around a plasmid's current parameter values used for mutations
+        (default: 0.05).
 
-    * `pconj` : specifies the probability of a successful horizontal
+* `pconj` : specifies the probability of a successful horizontal
       transmission event per donor host at a given time step. Use
       `--pconj 0` (default) to switch off conjugation.
 
-    * `steps` : how many steps to run the simulation for. The `SIGINT`
+* `steps` : how many steps to run the simulation for. The `SIGINT`
       signal (C-c C-c) is taken to signify a user-requested premature
       end to the simulation and is handled gracefully by the program.
 
-    * `psize` : specifies the host population size (default: 1000)
+* `psize` : specifies the host population size (default: 1000)
 
-    * `load_from` : specify the final population of another simulation
-      as the initial population for the current simulation.
+* `load_from` : specify the final population of another simulation as
+     the initial population for the current simulation.
 
-    * `mu` : specify the mutation probability per plasmid replication
+* `mu` : specify the mutation probability per plasmid replication
 
 
 
@@ -72,21 +72,21 @@ The simulation's output is stored in an HDF file format; the file name
 (typically ending in `.h5`) must be specified as the last argument to
 the `dps` command.
 
-The HDF output file has three major sections :
+The HDF output file has four major sections :
 
 1. `dynamics` : contains the evolutionary dynamics of the simulation
 split in four groups
 
-    * `counters` : records the numbers of various events (such as
+* `counters` : records the numbers of various events (such as
       population size, total copy number, division events etc.) over
       time
 
 	
-    * `intra`, `inter` and `global` : these contains descriptive
+* `intra`, `inter` and `global` : these contains descriptive
       statistics about evolutionary variables (i.e. means in `M`,
-      variances in `V` and pairwise covariances in `C`) at three different
-      levels: within hosts (intra), between hosts (inter) and across
-      all plasmids regardless of hosts (global)
+      variances in `V` and pairwise covariances in `C`) at three
+      different levels: within hosts (intra), between hosts (inter)
+      and across all plasmids regardless of hosts (global)
 
 2. `histograms` : contains the copy number and cell age (i.e. number
 of simulation steps required for a host to divide) histograms. The

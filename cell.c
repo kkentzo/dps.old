@@ -12,12 +12,12 @@
 #include <gsl/gsl_histogram2d.h>
 
 
-#include "../utils/clib.h"
-#include "../utils/sampling.h"
-#include "../utils/distribution.h"
-#include "../utils/bitvector.h"
-#include "../utils/nvar.h"
-#include "../utils/qhdf.h"
+#include "lib/clib.h"
+#include "lib/sampling.h"
+#include "lib/distribution.h"
+#include "lib/bitvector.h"
+#include "lib/nvar.h"
+#include "lib/qhdf.h"
 
 
 #include "pool.h"
